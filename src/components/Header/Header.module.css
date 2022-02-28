@@ -1,0 +1,33 @@
+.navBar {
+  background: white;
+  border-bottom: 2px solid #dd092f;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 9;
+}
+
+.logo {
+  max-width: 50px;
+  transition: all 0.2s;
+  margin-right: 20px;
+}
+/* 
+.logo:hover {
+  filter: invert();
+} */
+
+.navLink {
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 5px 20px;
+  color: #242424 !important;
+}
+
+.navLink.active {
+  color: #f90931 !important;
+}
+
+.navLink:hover {
+  color: #ff4c60;
+}

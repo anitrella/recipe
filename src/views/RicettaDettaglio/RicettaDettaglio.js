@@ -8,6 +8,8 @@ function RicettaDettaglio(props) {
   const params = useParams();
   const id = params.number;
 
+  // const currentMeal = allRecipe.filter((el) => el.idMeal === id)
+
   useEffect(() => {
     let isMounted = true;
     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)

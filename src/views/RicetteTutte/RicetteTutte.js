@@ -60,7 +60,7 @@ function RicetteTutte() {
   return (
     <Container>
       <Row>
-        <h3 className="my-5">Tutte le ricette</h3>
+        <h3 className="my-5 text-center">Tutte le ricette</h3>
       </Row>
       <Row>
         <Col>

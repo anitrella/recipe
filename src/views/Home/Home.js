@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import style from "./Home.module.css";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Container, Row, Col, Button } from "reactstrap";
 import RicettaCard from "../../components/RicettaCard/RicettaCard";
 
@@ -49,37 +49,46 @@ function Home() {
   // }, []);
 
   return (
-    <Container className="m-5">
-      <Row className="text-center mb-4 align-items-center">
-        <Col>
-          <p>Loremipsum shit porco ciao ciao</p>
-          <div>
-            <Button
-              className={`text-center m-1 text-nowrap ${style.btnhome}`}
-              onClick={changeMealHandler}
-            >
-              Lasciati ispirare
-            </Button>
-
-            <NavLink to="/ricette">
+    <div>
+      <div
+        className={`d-flex flex-column align-items-center justify-content-center ${style.heroimage}`}
+      >
+        <div className={`text-center ${style.x} p-5`}>
+          <h1 className={style.h1}>Random recipe</h1>
+          <h3 className={style.h3}>Scopri la cucina di tutto il mondo</h3>
+        </div>
+      </div>
+      <Container className="m-5">
+        <Row className="text-center mb-4 align-items-center">
+          <Col>
+            <p>Descrizione della Home del sito web</p>
+            <div>
+              <NavLink to="/ricette">
+                <Button
+                  className={`text-center m-1 text-nowrap ${style.btnhome}`}
+                >
+                  Scopri tutte le ricette
+                </Button>
+              </NavLink>
               <Button
                 className={`text-center m-1 text-nowrap ${style.btnhome}`}
+                onClick={changeMealHandler}
               >
-                Scopri tutte le ricette
+                Lasciati ispirare
               </Button>
-            </NavLink>
-          </div>
-        </Col>
-        <Col>
-          <RicettaCard
-            className="text-center"
-            name={randomApi && randomApi.strMeal}
-            idMeal={randomApi && randomApi.idMeal}
-            image={randomApi && randomApi.strMealThumb}
-          ></RicettaCard>
-        </Col>
-      </Row>
-    </Container>
+            </div>
+          </Col>
+          <Col>
+            <RicettaCard
+              className="text-center"
+              name={randomApi && randomApi.strMeal}
+              idMeal={randomApi && randomApi.idMeal}
+              image={randomApi && randomApi.strMealThumb}
+            ></RicettaCard>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 }
 

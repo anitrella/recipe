@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Container, Row, Col } from "reactstrap";
+import style from "./RicettaDettaglio.module.css";
 
 function RicettaDettaglio(props) {
   const [details, setDetails] = useState();
@@ -139,7 +140,9 @@ function RicettaDettaglio(props) {
           `${details.strIngredient20}: ${details.strMeasure20}`}
       </span>
       <h5 className="mb-3">Procedure:</h5>
-      <p>{details && details.strInstructions}</p>
+      <p className={`mx-3 ${style.procedure}`}>
+        {details && details.strInstructions}
+      </p>
     </Container>
   );
 }

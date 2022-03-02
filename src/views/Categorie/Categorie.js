@@ -24,7 +24,7 @@ function Categorie() {
   return (
     <Container>
       <Row>
-        <h3 className="my-5">Esplora le ricette per categoria</h3>
+        <h3 className="my-5 text-center">Esplora le ricette per categoria</h3>
       </Row>
       <Row>
         <Col>

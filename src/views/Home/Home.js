@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { Container, Row, Col, Button } from "reactstrap";
 import RicettaCard from "../../components/RicettaCard/RicettaCard";
 
-function Home() {
+function Home(props) {
   const [randomApi, setRandomApi] = useState();
 
   const fetchMeal = async (changeMeal) => {
@@ -58,11 +58,11 @@ function Home() {
           <h3 className={style.h3}>Scopri la cucina di tutto il mondo</h3>
         </div>
       </div>
-      <Container className="m-5">
+      <Container className="m-sm-5 my-5">
         <Row className="text-center mb-4 align-items-center">
-          <Col>
+          <Col sm>
             <p>Descrizione della Home del sito web</p>
-            <div>
+            <div className="mb-3">
               <NavLink to="/ricette">
                 <Button
                   className={`text-center m-1 text-nowrap ${style.btnhome}`}
@@ -78,9 +78,10 @@ function Home() {
               </Button>
             </div>
           </Col>
-          <Col>
+          <Col sm>
             <RicettaCard
               className="text-center"
+              area={randomApi && randomApi.strArea}
               name={randomApi && randomApi.strMeal}
               idMeal={randomApi && randomApi.idMeal}
               image={randomApi && randomApi.strMealThumb}

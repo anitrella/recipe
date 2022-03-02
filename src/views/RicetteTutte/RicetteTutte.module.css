@@ -1,1 +1,6 @@
-
+.buttonFiltri,
+.buttonFiltri:active,
+.buttonFiltri:focus {
+  margin-bottom: 1rem;
+  background-color: darkred !important;
+}

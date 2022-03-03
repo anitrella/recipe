@@ -1,6 +1,6 @@
 .navBar {
-  background: white;
-  border-bottom: 2px solid #dd092f;
+  background-color: var(--tertiary-color) !important;
+  box-shadow: 2px 6px 27px 0px rgba(0, 0, 0, 0.81);
   position: sticky;
   width: 100%;
   top: 0;
@@ -18,16 +18,15 @@
 } */
 
 .navLink {
-  font-weight: bold;
-  text-transform: uppercase;
+  font-weight: regular;
   padding: 5px 20px;
-  color: #242424 !important;
+  color: #000000 !important;
 }
 
 .navLink.active {
-  color: #f90931 !important;
+  font-weight: bold;
 }
 
 .navLink:hover {
-  color: #ff4c60;
+  color: #ffffff;
 }

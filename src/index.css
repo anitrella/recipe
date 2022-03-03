@@ -1,3 +1,10 @@
+:root {
+  --primary-color: #aa4465;
+  --secondary-color: #fbbfca;
+  --tertiary-color: #ffeed6;
+  --light-color: #d2bf55;
+}
+
 img {
   max-width: 100%;
 }
@@ -9,5 +16,20 @@ a {
 
 a:hover {
   text-decoration: none;
-  color: #f70931;
+  color: #aa4465;
+}
+
+body {
+  margin-top: 70px;
+  font-family: "Lora", serif;
+  background-color: #f7ecf0;
+}
+
+.card {
+  color: #11070a;
+  background-color: white;
+}
+
+.button {
+  background-color: var(--light-color);
 }

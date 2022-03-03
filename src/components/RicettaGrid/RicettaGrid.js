@@ -1,5 +1,6 @@
 import React from "react";
 import RicettaCard from "../RicettaCard/RicettaCard";
+import { Col } from "reactstrap";
 
 function RicettaGrid(props) {
   const { recipesList, col } = props;
@@ -17,13 +18,15 @@ function RicettaGrid(props) {
         recipesList.length !== 0 &&
         recipesList.map((recipe) => {
           return (
-            <RicettaCard
-              // className="width-100 height-328"
-              key={recipe.idMeal}
-              name={recipe.strMeal}
-              image={recipe.strMealThumb}
-              idMeal={recipe.idMeal}
-            />
+            <Col className="mb-3">
+              <RicettaCard
+                // className="width-100 height-328"
+                key={recipe.idMeal}
+                name={recipe.strMeal}
+                image={recipe.strMealThumb}
+                idMeal={recipe.idMeal}
+              />
+            </Col>
           );
         })}
     </div>

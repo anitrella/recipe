@@ -1,5 +1,11 @@
 .card {
   margin-bottom: 30px;
+  box-shadow: 2px 6px 20px 0px rgba(255, 103, 103, 0.407);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.04);
 }
 
 .image {

@@ -74,7 +74,7 @@ function RicetteTutte(props) {
   };
 
   return (
-    <Container>
+    <Container className="mb-5">
       <Row>
         <h3 className="my-5 text-center">Tutte le ricette</h3>
       </Row>
@@ -88,7 +88,7 @@ function RicetteTutte(props) {
             {allRecipeComplete.length < 283 && (
               <div className="d-flex align-items-center">
                 <Spinner className="me-3">Loading...</Spinner>
-                <span>Attendi un momento..</span>
+                <span>Attendi un momento, stiamo cucinando per te...</span>
               </div>
             )}
             <Form>

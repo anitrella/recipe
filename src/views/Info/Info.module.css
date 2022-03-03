@@ -12,8 +12,8 @@
       rgba(251, 191, 202, 0.2),
       rgba(251, 191, 202, 0.8)
     ),
-    url("../../assets/images/heroimage.jpg") no-repeat center center scroll;
-  min-height: 90vh;
+    url("../../assets/images/documentazione.jpg") no-repeat center center scroll;
+  height: 90vh;
   background-size: cover;
 }
 
@@ -24,13 +24,19 @@
   font-weight: 700;
 }
 
+@media screen and (max-width: 633px) {
+  .h1 {
+    font-size: 60px;
+  }
+}
+
 .h3 {
   /* font-size: 22px; */
   color: #2c2c2c;
 }
 /* .x {
-  background: linear-gradient(
-    rgba(240, 147, 184, 0.071),
-    rgba(220, 132, 185, 0.071)
-  );
-} */
+    background: linear-gradient(
+      rgba(240, 147, 184, 0.071),
+      rgba(220, 132, 185, 0.071)
+    );
+  } */

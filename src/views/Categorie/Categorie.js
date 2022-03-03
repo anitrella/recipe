@@ -22,7 +22,7 @@ function Categorie() {
   }, []);
 
   return (
-    <Container>
+    <Container className="mb-5">
       <Row>
         <h3 className="my-5 text-center">Esplora le ricette per categoria</h3>
       </Row>

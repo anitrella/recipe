@@ -1,6 +1,11 @@
 .card {
-  margin-bottom: 30px;
-  height: 328px;
+  height: 100%;
+  box-shadow: 2px 6px 27px 0px rgba(255, 103, 103, 0.407);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.04);
 }
 
 .image {
@@ -10,6 +15,8 @@
 }
 
 .title {
+  color: black;
+  font-weight: 600;
   font-size: 1rem !important;
   margin-bottom: 0;
   white-space: nowrap;
@@ -25,4 +32,5 @@
   margin-top: 30px;
   color: black !important;
   font-size: 20px !important;
+  font-style: italic;
 }

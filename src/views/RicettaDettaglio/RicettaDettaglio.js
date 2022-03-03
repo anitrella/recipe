@@ -28,8 +28,8 @@ function RicettaDettaglio(props) {
   }, []);
 
   return (
-    <Container className="my-4 d-flex flex-column align-items-center">
-      <h2 className="text-center mt-2 mb-3">
+    <Container className="my-4 d-flex flex-column align-items-center p-4">
+      <h2 className="text-center mt-1 mb-3">
         {details && `${details.strMeal}`}
       </h2>
       <p>{details && details.strCategory}</p>

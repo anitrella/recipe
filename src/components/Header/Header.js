@@ -34,7 +34,7 @@ const Header = (props) => {
 
   return (
     <div>
-      <Navbar color="light" light expand="md">
+      <Navbar fixed="top" light expand="md" className={style.navBar}>
         <RouterLink to="/">
           <img src={props.logo} className={style.logo} />
         </RouterLink>

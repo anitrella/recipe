@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import style from "./Home.module.css";
 import { NavLink } from "react-router-dom";
-import { Container, Row, Col, Button } from "reactstrap";
+import { Container, Row, Col, Button, Card } from "reactstrap";
 import RicettaCard from "../../components/RicettaCard/RicettaCard";
 
 function Home(props) {
@@ -51,31 +51,38 @@ function Home(props) {
   return (
     <div>
       <div
-        className={`d-flex flex-column align-items-center justify-content-center ${style.heroimage}`}
+        className={`d-flex flex-row align-items-center justify-content-center ${style.heroimage}`}
       >
-        <div className={`text-center ${style.x} p-5`}>
-          <h1 className={style.h1}>Random recipe</h1>
-          <h3 className={style.h3}>Scopri la cucina di tutto il mondo</h3>
+        <div className={`d-inline text-center ${style.x} px-5`}>
+          <h1 className={style.h1}>World Wide Food</h1>
+          <p className={`lead ${style.h3}`}>
+            Il sito che esplora i confini dei sapori
+          </p>
         </div>
       </div>
       <Container className="m-sm-5 my-5">
-        <Row className="text-center mb-4 align-items-center">
+        <Row className="text-center my-4 align-items-center">
           <Col sm>
-            <p>Descrizione della Home del sito web</p>
-            <div className="mb-3">
-              <NavLink to="/ricette">
-                <Button
-                  className={`text-center m-1 text-nowrap ${style.btnhome}`}
-                >
-                  Scopri tutte le ricette
-                </Button>
-              </NavLink>
+            <p className="text-start">
+              Vuoi stupire gli ospiti con piatti ricercati? Ami esplorare nuovi
+              sapori? In World Wide Food troverai{" "}
+              <strong>centinaia di ricette</strong> da tutto il mondo. Mettiti
+              il grembiule e comincia!
+            </p>
+            <div>
               <Button
                 className={`text-center m-1 text-nowrap ${style.btnhome}`}
                 onClick={changeMealHandler}
               >
                 Lasciati ispirare
               </Button>
+              <NavLink to="/ricette">
+                <Button
+                  className={`text-center m-3 text-nowrap ${style.btnhome}`}
+                >
+                  Scopri tutte le ricette
+                </Button>
+              </NavLink>
             </div>
           </Col>
           <Col sm>

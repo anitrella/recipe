@@ -113,7 +113,7 @@ function App() {
     { url: "/", text: "Home" },
     { url: "/categorie", text: "Categorie" },
     { url: "/ricette", text: "Ricette" },
-    { url: "/info", text: "Info" },
+    { url: "/info", text: "Documentazione" },
   ];
 
   return (

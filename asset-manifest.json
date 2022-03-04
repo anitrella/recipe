@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/worldwidefood/static/css/main.c1b89752.css",
+    "main.js": "/worldwidefood/static/js/main.a9a2f504.js",
+    "static/js/787.29848fd4.chunk.js": "/worldwidefood/static/js/787.29848fd4.chunk.js",
+    "static/media/documentazione.jpg": "/worldwidefood/static/media/documentazione.ced1a526cb4c26785da6.jpg",
+    "static/media/heroimage.jpg": "/worldwidefood/static/media/heroimage.f2299bd169bd9c03daaa.jpg",
+    "static/media/icecream.png": "/worldwidefood/static/media/icecream.396f8f92bcd1030df8ab.png",
+    "static/media/logo.png": "/worldwidefood/static/media/logo.fc9a50ecd1eed17aacd0.png",
+    "static/media/cartella.png": "/worldwidefood/static/media/cartella.0fd4686cd3a59530046a.png",
+    "static/media/disco.png": "/worldwidefood/static/media/disco.4d97955543712c057650.png",
+    "static/media/unimib.png": "/worldwidefood/static/media/unimib.f718d9cde1d85bf8a2fd.png",
+    "index.html": "/worldwidefood/index.html",
+    "main.c1b89752.css.map": "/worldwidefood/static/css/main.c1b89752.css.map",
+    "main.a9a2f504.js.map": "/worldwidefood/static/js/main.a9a2f504.js.map",
+    "787.29848fd4.chunk.js.map": "/worldwidefood/static/js/787.29848fd4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c1b89752.css",
+    "static/js/main.a9a2f504.js"
+  ]
+}

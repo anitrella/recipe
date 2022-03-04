@@ -106,7 +106,7 @@ function App() {
   ];
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="worldwidefood">
       <MainTemplate
         footerCourseName="Tecnologie e Applicazioni dei Sistemi Distribuiti"
         footerCourseLink="https://elearning.unimib.it/course/view.php?id=31277"

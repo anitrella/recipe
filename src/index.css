@@ -1,8 +1,8 @@
 :root {
   --primary-color: #aa4465;
-  --secondary-color: #fbbfca;
+  --secondary-color: rgb(251, 191, 202);
   --tertiary-color: #ffeed6;
-  --light-color: #d2bf55;
+  --light-color: rgb(210, 191, 85);
 }
 
 img {
@@ -32,4 +32,18 @@ body {
 
 .button {
   background-color: var(--light-color);
+}
+
+.text-primary {
+  color: var(--primary-color) !important;
+}
+
+.text-secondary {
+  color: var(--secondary-color) !important;
+}
+.text-tertiary {
+  color: var(--tertiary-color) !important;
+}
+.text-light {
+  color: var(--light-color);
 }

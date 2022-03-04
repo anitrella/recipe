@@ -8,7 +8,7 @@ function Table(props) {
   const RecipeTr = recipesList.map((recipe) => {
     return (
       <tr key={recipe.strMeal}>
-        <td>{recipe.strMeal}</td>
+        <td className={style.title}>{recipe.strMeal}</td>
         <td>
           <img
             onError={(event) => foodDefaultImage(event)}

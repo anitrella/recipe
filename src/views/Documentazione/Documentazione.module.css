@@ -1,0 +1,29 @@
+.btnhome {
+  background-color: var(--primary-color) !important;
+  max-width: 300px !important;
+}
+
+.container {
+  margin-top: 100 px;
+}
+
+.heroimage {
+  background: url("../../assets/images/documentazione.jpg") no-repeat center
+    center scroll;
+  height: 90vh;
+  background-size: cover;
+}
+
+.h1 {
+  color: var(--tertiary-color);
+  font-family: "Baloo 2";
+  font-size: 80px;
+  font-weight: 700;
+  text-shadow: 2px 2px 6px #2b0f0f;
+}
+
+.h3 {
+  color: var(--tertiary-color);
+  font-family: "Montserrat";
+  text-shadow: 3px 0px 6px #000000a6;
+}

@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import style from "./Home.module.css";
 import { NavLink } from "react-router-dom";
-import { Container, Row, Col, Button, Card } from "reactstrap";
+import { Container, Row, Col, Button } from "reactstrap";
 import RicettaCard from "../../components/RicettaCard/RicettaCard";
 
 function Home(props) {
   const [randomApi, setRandomApi] = useState();
 
+  //Costruisco la funzione che prende un random meal
   const fetchMeal = async (changeMeal) => {
     const response = await fetch(
       "https://www.themealdb.com/api/json/v1/1/random.php"
@@ -16,47 +17,25 @@ function Home(props) {
     changeMeal(meal);
   };
 
+  // Costruisco la funzione che associa il click del bottone "Lasciati ispirare" alla comparsa di un random meal
   const changeMealHandler = () => {
     fetchMeal(setRandomApi);
   };
 
+  // Faccio sì che il l'API del random meal venga chiamata al caricamento della pagina
   useEffect(() => {
     fetchMeal(setRandomApi);
   }, []);
 
-  // useEffect(() => {
-  //   let isMounted = true;
-
-  //   return () => {
-  //     isMounted = false;
-  //     setClicked();
-  //   };
-  // }, []);
-
-  // useEffect(() => {
-  //   let isMounted = true;
-
-  //   fetch("https://www.themealdb.com/api/json/v1/1/random.php")
-  //     .then((r) => r.json())
-  //     .then((r) => {
-  //       if (isMounted) {
-  //         setRandomApi(r.meals[0]);
-  //       }
-  //     });
-  //   return () => {
-  //     isMounted = false;
-  //   };
-  // }, []);
-
   return (
     <div>
       <div
-        className={`d-flex flex-row align-items-center justify-content-center ${style.heroimage}`}
+        className={`d-flex flex-row justify-content-center pt-5 ${style.heroimage}`}
       >
-        <div className={`d-inline text-center ${style.x} px-5`}>
-          <h1 className={style.h1}>World Wide Food</h1>
+        <div className={`d-inline text-center px-5 m-5 pt-5`}>
+          <h1 className={`display-1 ${style.h1}`}>World Wide Food</h1>
           <p className={`lead ${style.h3}`}>
-            Il sito che esplora i confini dei sapori
+            Esplora i confini dei tuoi sapori
           </p>
         </div>
       </div>

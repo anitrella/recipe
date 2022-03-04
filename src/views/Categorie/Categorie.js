@@ -5,6 +5,7 @@ import { Container, Row, Col } from "reactstrap";
 function Categorie() {
   const [allCategories, setAllCategories] = useState();
 
+  // Costruisco la chiamata API per visualizzare le categorie
   useEffect(() => {
     let isMounted = true;
 
@@ -14,7 +15,8 @@ function Categorie() {
         if (isMounted) {
           setAllCategories(r.categories);
         }
-      });
+      })
+      .catch((error) => console.log("Error" + error));
 
     return () => {
       isMounted = false;
@@ -24,7 +26,9 @@ function Categorie() {
   return (
     <Container className="mb-5">
       <Row>
-        <h3 className="my-5 text-center">Esplora le ricette per categoria</h3>
+        <h3 className="my-5 text-center text-primary">
+          Esplora le ricette per categoria
+        </h3>
       </Row>
       <Row>
         <Col>

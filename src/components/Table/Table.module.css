@@ -5,3 +5,12 @@
 td {
   width: 700px;
 }
+
+.title {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.action {
+  color: #191314;
+}

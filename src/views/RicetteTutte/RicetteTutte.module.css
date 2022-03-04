@@ -5,6 +5,15 @@
   background-color: darkred !important;
 }
 
-.form {
-  background-color: brown;
+.casella:checked {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+.casella:focus {
+  background-color: var(--primary-color) !important;
+  background-color: var(--primary-color) !important;
+  box-shadow: var(--primary-color) !important;
+}
+.casella:active {
+  border-color: var(--primary-color) !important;
 }

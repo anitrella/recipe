@@ -9,8 +9,8 @@
   padding: 4px 16px;
   background: white;
   cursor: pointer;
-  border: 1px solid #dd092f;
-  color: #dd092f;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
 }
 
 .option:first-child {
@@ -24,6 +24,6 @@
 }
 
 .option.active {
-  background-color: #dd092f;
-  color: white;
+  background-color: var(--primary-color);
+  color: #ffffff;
 }

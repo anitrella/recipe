@@ -37,6 +37,7 @@ function RicettaDettaglio(props) {
 
       <img
         src={details && details.strMealThumb}
+        alt={details && details.strMeal}
         className="mb-5"
         onError={(event) => foodDefaultImage(event)}
       />

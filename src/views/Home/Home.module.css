@@ -8,29 +8,21 @@
 }
 
 .heroimage {
-  background: linear-gradient(
-      rgba(251, 191, 202, 0.2),
-      rgba(251, 191, 202, 0.8)
-    ),
-    url("../../assets/images/heroimage.jpg") no-repeat center center scroll;
+  background: url("../../assets/images/heroimage.jpg") no-repeat center center
+    scroll;
   min-height: 90vh;
   background-size: cover;
 }
 
 .h1 {
-  color: #000000;
-  font-style: italic;
-  font-size: 80px;
-  font-weight: 700;
+  font-family: "Baloo 2";
+  color: var(--tertiary-color);
+  text-shadow: 2px 2px 6px #2b0f0f;
 }
 
 .h3 {
-  /* font-size: 22px; */
-  color: #2c2c2c;
+  font-family: "Montserrat";
+  font-weight: 800;
+  color: var(--tertiary-color);
+  text-shadow: 1px 0px 5px #000000a6;
 }
-/* .x {
-  background: linear-gradient(
-    rgba(240, 147, 184, 0.071),
-    rgba(220, 132, 185, 0.071)
-  );
-} */

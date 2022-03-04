@@ -18,7 +18,7 @@ function CategoryCard(props) {
           alt={name}
         />
         <CardBody className="text-center">
-          <CardTitle tag="h5" className={`${style.title}`}>
+          <CardTitle tag="h5" className={`text-primary ${style.title}`}>
             {name}
           </CardTitle>
         </CardBody>

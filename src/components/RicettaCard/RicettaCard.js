@@ -25,7 +25,10 @@ function RicettaCard(props) {
           alt={name}
         />
         <CardBody className="text-center">
-          <CardTitle tag="h5" className={`text-wrap ${style.title}`}>
+          <CardTitle
+            tag="h5"
+            className={`text-wrap text-primary ${style.title}`}
+          >
             {name}
           </CardTitle>
           <CardText className={style.subtitle}>{area}</CardText>

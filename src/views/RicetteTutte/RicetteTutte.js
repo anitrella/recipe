@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import RicettaGrid from "../../components/RicettaGrid/RicettaGrid";
 import {
   Container,
-  Badge,
   Input,
   Form,
   FormGroup,
@@ -35,11 +34,6 @@ function RicetteTutte(props) {
     setActiveFilter(newFilter);
   };
 
-  useEffect(() => {
-    console.log("questo è ActiveFilters");
-    console.log(activeFilter);
-  }, [activeFilter]);
-
   // Estraggo tutte le aree geografiche e le salvo in allAreas
   useEffect(() => {
     if (allRecipeComplete.length === 283) {
@@ -52,22 +46,12 @@ function RicetteTutte(props) {
   }, [allRecipeComplete]);
 
   useEffect(() => {
-    console.log("Tutte le aree sono:");
-    console.log(allAreas);
-  }, [allAreas]);
-
-  useEffect(() => {
     setRecipeFiltered(
       allRecipeComplete.filter((recipe) =>
         activeFilter.includes(recipe.strArea)
       )
     );
   }, [activeFilter]);
-
-  useEffect(() => {
-    console.log("Tutte le recipe filtered:");
-    console.log(recipeFiltered);
-  }, [recipeFiltered]);
 
   const toggle = () => {
     setIsOpen(!isOpen);
@@ -76,7 +60,7 @@ function RicetteTutte(props) {
   return (
     <Container className="mb-5">
       <Row>
-        <h3 className="my-5 text-center">Tutte le ricette</h3>
+        <h3 className="my-5 text-center text-primary">Tutte le ricette</h3>
       </Row>
 
       <div>
@@ -97,6 +81,7 @@ function RicetteTutte(props) {
                   return (
                     <FormGroup check inline key={index}>
                       <Input
+                        className={style.casella}
                         type="checkbox"
                         onClick={() => changeFilter(area)}
                       />

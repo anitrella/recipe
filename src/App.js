@@ -3,7 +3,7 @@ import MainTemplate from "./components/MainTemplate/MainTemplate";
 
 import Home from "./views/Home/Home.js";
 import Categorie from "./views/Categorie/Categorie";
-import Info from "./views/Info/Info";
+import Documentazione from "./views/Documentazione/Documentazione";
 import RicettaDettaglio from "./views/RicettaDettaglio/RicettaDettaglio";
 import RicettePerCategoria from "./views/RicettePerCategoria/RicettePerCategoria";
 import RicetteTutte from "./views/RicetteTutte/RicetteTutte";
@@ -31,8 +31,8 @@ function App() {
           const catNames = r.categories.map((category) => category.strCategory);
           setListOfCategories(catNames);
         }
-      });
-
+      })
+      .catch((error) => console.log("Error" + error));
     return () => {
       isMounted = false;
     };
@@ -52,7 +52,8 @@ function App() {
             if (isMounted) {
               setMeals(r.meals);
             }
-          });
+          })
+          .catch((error) => console.log("Error" + error));
       });
 
     return () => {
@@ -67,9 +68,6 @@ function App() {
 
   // Passo 4: una volta ricevuti tutte le ricette, raccolgo tutti gli id in un array
   useEffect(() => {
-    console.log("all recipe è ");
-    console.log(allRecipe);
-
     if (allRecipe.length === 283) {
       setAllMealsId(allRecipe.map((recipe) => recipe.idMeal));
     }
@@ -77,9 +75,6 @@ function App() {
 
   // Passo 5: faccio la fetch di tutti i dettagli dei singoli meals
   useEffect(() => {
-    console.log("allMealsId è ");
-    console.log(allMealsId);
-
     let isMounted = true;
 
     allMealsId.forEach((id) => {
@@ -103,17 +98,11 @@ function App() {
     if (details) setAllRecipeComplete([...allRecipeComplete, { ...details }]);
   }, [details]);
 
-  // console.log allRecipeComplete
-  useEffect(() => {
-    console.log("allRecipeComplete è ");
-    console.log(allRecipeComplete);
-  }, [allRecipeComplete]);
-
   const nav = [
     { url: "/", text: "Home" },
     { url: "/categorie", text: "Categorie" },
     { url: "/ricette", text: "Ricette" },
-    { url: "/info", text: "Documentazione" },
+    { url: "/documentazione", text: "Documentazione" },
   ];
 
   return (
@@ -139,7 +128,7 @@ function App() {
           />
 
           <Route path="/ricette/:number" element={<RicettaDettaglio />} />
-          <Route path="/info" element={<Info />} />
+          <Route path="/documentazione" element={<Documentazione />} />
         </Routes>
       </MainTemplate>
     </BrowserRouter>

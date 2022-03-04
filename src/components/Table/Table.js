@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./Table.module.css";
 import { NavLink } from "react-router-dom";
+import { foodDefaultImage } from "../../utility/utility";
 
 function Table(props) {
   const { recipesList } = props;
@@ -10,6 +11,7 @@ function Table(props) {
         <td>{recipe.strMeal}</td>
         <td>
           <img
+            onError={(event) => foodDefaultImage(event)}
             className={style.image}
             src={recipe.strMealThumb}
             alt={recipe.strMeal}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Container, Row, Col } from "reactstrap";
 import style from "./RicettaDettaglio.module.css";
+import { foodDefaultImage } from "../../utility/utility";
 
 function RicettaDettaglio(props) {
   const [details, setDetails] = useState();
@@ -34,7 +35,11 @@ function RicettaDettaglio(props) {
       </h2>
       <p>{details && details.strCategory}</p>
 
-      <img src={details && details.strMealThumb} className="mb-5" />
+      <img
+        src={details && details.strMealThumb}
+        className="mb-5"
+        onError={(event) => foodDefaultImage(event)}
+      />
       <p className="mb-5">Area: {details && details.strArea}</p>
 
       <h5 className="mb-3">Ingredients:</h5>

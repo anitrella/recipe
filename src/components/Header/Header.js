@@ -36,7 +36,7 @@ const Header = (props) => {
     <div>
       <Navbar fixed="top" light expand="md" className={style.navBar}>
         <RouterLink to="/">
-          <img src={props.logo} className={style.logo} />
+          <img src={props.logo} className={style.logo} alt="logo" />
         </RouterLink>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>

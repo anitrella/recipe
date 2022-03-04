@@ -11,12 +11,12 @@ img {
 
 a {
   text-decoration: none;
-  color: #dd092f;
+  color: var(--primary-color);
 }
 
 a:hover {
   text-decoration: none;
-  color: #aa4465;
+  color: var(--secondary-color);
 }
 
 body {

@@ -9,6 +9,7 @@ import {
 } from "reactstrap";
 import style from "./RicettaCard.module.css";
 import { NavLink } from "react-router-dom";
+import { foodDefaultImage } from "../../utility/utility";
 
 function RicettaCard(props) {
   const { name, idMeal, image, area } = props;
@@ -17,6 +18,7 @@ function RicettaCard(props) {
     <NavLink to={`/ricette/${idMeal}`}>
       <Card className={style.card}>
         <CardImg
+          onError={(event) => foodDefaultImage(event)}
           className={style.image}
           top-width="100%"
           src={image}

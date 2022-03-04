@@ -12,6 +12,7 @@ function RicettePerCategoria() {
   const [displayGrid, setDisplayGrid] = useState(true);
   const [recipesList, setRecipesList] = useState();
 
+  // Chiamo l'Api per ottenere i dati dei pasti divisi per categoria
   useEffect(() => {
     let isMounted = true;
     fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${cat}`)

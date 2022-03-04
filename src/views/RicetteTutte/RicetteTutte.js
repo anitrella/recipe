@@ -14,7 +14,6 @@ import {
   Card,
 } from "reactstrap";
 import style from "./RicetteTutte.module.css";
-import { act } from "react-dom/cjs/react-dom-test-utils.production.min";
 
 function RicetteTutte(props) {
   const { allRecipe, allRecipeComplete } = props;
@@ -23,6 +22,7 @@ function RicetteTutte(props) {
   const [recipeFiltered, setRecipeFiltered] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
 
+  // Imposto la funzione per cambiare il filtro per l'area geografica inserita
   const changeFilter = (item) => {
     let newFilter = activeFilter.slice();
     let indexArea = newFilter.indexOf(item);
@@ -45,6 +45,7 @@ function RicetteTutte(props) {
     }
   }, [allRecipeComplete]);
 
+  // Filtro solo le ricette che provengono dall'area geografica specificata
   useEffect(() => {
     setRecipeFiltered(
       allRecipeComplete.filter((recipe) =>
@@ -53,6 +54,7 @@ function RicetteTutte(props) {
     );
   }, [activeFilter]);
 
+  // Creo il toggle per visualizzare i filtri
   const toggle = () => {
     setIsOpen(!isOpen);
   };

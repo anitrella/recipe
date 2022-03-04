@@ -1,6 +1,11 @@
 .btnhome {
   background-color: var(--primary-color) !important;
   max-width: 300px !important;
+  border-color: var(--primary-color) !important;
+}
+.btnhome:hover {
+  background-color: #bb6984 !important;
+  border-color: #bb6984 !important;
 }
 
 .container {

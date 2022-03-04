@@ -51,9 +51,10 @@ function Documentazione() {
                 sito
                 <ul>
                   <li>Categorie</li>
+                  <li>Documentazione</li>
+
                   <li>Home</li>
-                  <li>Info</li>
-                  <li>Ricetta Dettagli</li>
+                  <li>Ricetta dettaglio</li>
                   <li>Ricette per categoria</li>
                   <li>Ricette tutte</li>
                 </ul>

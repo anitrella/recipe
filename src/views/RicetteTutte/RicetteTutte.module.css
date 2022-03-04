@@ -5,6 +5,10 @@
   background-color: darkred !important;
 }
 
+.buttonFiltri:hover {
+  background-color: #bb6984 !important;
+}
+
 .casella:checked {
   background-color: var(--primary-color) !important;
   border-color: var(--primary-color) !important;

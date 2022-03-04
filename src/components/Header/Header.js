@@ -6,6 +6,7 @@ import style from "./Header.module.css";
 const Header = (props) => {
   const { navItems } = props;
 
+  // imposto il toggle per visualizzare il menu responsive
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);

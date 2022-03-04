@@ -25,5 +25,5 @@
 
 .option.active {
   background-color: var(--primary-color);
-  color: #ffffff;
+  color: white;
 }

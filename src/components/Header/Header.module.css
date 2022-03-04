@@ -9,16 +9,19 @@
   color: var(--primary-color) !important;
 }
 
+.navLink:hover {
+  font-weight: bold !important;
+  color: #bb6984 !important;
+}
+
 .logo {
   max-width: 50px;
-  transition: all 0.9s;
+  transition: all 1s;
   margin-right: 20px;
 }
 
 .logo:hover {
-  transform: scale(1.15);
-
-  /* transform: rotate(360deg); */
+  transform: rotate(360deg);
 }
 
 .navLink {
@@ -27,10 +30,6 @@
   color: var(--primary-color) !important;
 }
 
-.navLink.active {
+.active {
   font-weight: bold;
-}
-
-.navLink:hover {
-  color: #ffffff;
 }

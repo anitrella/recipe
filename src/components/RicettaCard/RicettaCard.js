@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Card,
-  CardBody,
-  CardImg,
-  CardTitle,
-  CardSubtitle,
-  CardText,
-} from "reactstrap";
+import { Card, CardBody, CardImg, CardTitle, CardText } from "reactstrap";
 import style from "./RicettaCard.module.css";
 import { NavLink } from "react-router-dom";
 import { foodDefaultImage } from "../../utility/utility";

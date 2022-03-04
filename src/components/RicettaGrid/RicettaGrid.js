@@ -20,7 +20,6 @@ function RicettaGrid(props) {
           return (
             <Col className="mb-3">
               <RicettaCard
-                // className="width-100 height-328"
                 key={recipe.idMeal}
                 name={recipe.strMeal}
                 image={recipe.strMealThumb}

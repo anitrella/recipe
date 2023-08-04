@@ -65,13 +65,14 @@ function Home(props) {
             </div>
           </Col>
           <Col sm>
-            <RicettaCard
-              className="text-center"
-              area={randomApi && randomApi.strArea}
-              name={randomApi && randomApi.strMeal}
-              idMeal={randomApi && randomApi.idMeal}
-              image={randomApi && randomApi.strMealThumb}
-            ></RicettaCard>
+            <NavLink to={`/ricette/${randomApi.idMeal}`}>
+              <RicettaCard
+                className="text-center"
+                area={randomApi && randomApi.strArea}
+                name={randomApi && randomApi.strMeal}
+                image={randomApi && randomApi.strMealThumb}
+              />
+            </NavLink>
           </Col>
         </Row>
       </Container>

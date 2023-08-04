@@ -1,6 +1,7 @@
 import React from "react";
 import RicettaCard from "../RicettaCard/RicettaCard";
 import { Col } from "reactstrap";
+import { NavLink } from "react-router-dom";
 
 function RicettaGrid(props) {
   const { recipesList, col } = props;
@@ -19,12 +20,13 @@ function RicettaGrid(props) {
         recipesList.map((recipe) => {
           return (
             <Col className="mb-3">
-              <RicettaCard
-                key={recipe.idMeal}
-                name={recipe.strMeal}
-                image={recipe.strMealThumb}
-                idMeal={recipe.idMeal}
-              />
+              <NavLink to={`/ricette/${recipe.idMeal}`}>
+                <RicettaCard
+                  key={recipe.idMeal}
+                  name={recipe.strMeal}
+                  image={recipe.strMealThumb}
+                />
+              </NavLink>
             </Col>
           );
         })}

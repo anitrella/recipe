@@ -3,23 +3,21 @@ import { Card, CardBody, CardImg, CardTitle, CardText } from "reactstrap";
 import style from "./RicettaCard.module.css";
 import { foodDefaultImage } from "../../utility/utility";
 
-function RicettaCard(props) {
-  const { name, image, area } = props;
-
+function RicettaCard({ meal, area }) {
   return (
     <Card className={style.card}>
       <CardImg
         onError={(event) => foodDefaultImage(event)}
         className={style.image}
         top-width="100%"
-        src={image}
-        alt={name}
+        src={meal?.strMealThumb}
+        alt={meal?.strMeal}
       />
       <CardBody className="text-center">
         <CardTitle tag="h5" className={`text-wrap text-primary ${style.title}`}>
-          {name}
+          {meal?.strMeal}
         </CardTitle>
-        <CardText className={style.subtitle}>{area}</CardText>
+        {area && <CardText className={style.subtitle}>{area}</CardText>}
       </CardBody>
     </Card>
   );

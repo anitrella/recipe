@@ -21,11 +21,7 @@ function RicettaGrid(props) {
           return (
             <Col className="mb-3">
               <NavLink to={`/ricette/${recipe.idMeal}`}>
-                <RicettaCard
-                  key={recipe.idMeal}
-                  name={recipe.strMeal}
-                  image={recipe.strMealThumb}
-                />
+                <RicettaCard key={recipe.idMeal} meal={recipe} />
               </NavLink>
             </Col>
           );

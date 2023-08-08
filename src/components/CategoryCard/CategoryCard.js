@@ -3,21 +3,19 @@ import { Card, CardBody, CardImg, CardTitle } from "reactstrap";
 import style from "./CategoryCard.module.css";
 import { foodDefaultImage } from "../../utility/utility";
 
-function CategoryCard(props) {
-  const { name, image } = props;
-
+function CategoryCard({ category }) {
   return (
     <Card className={style.card}>
       <CardImg
         onError={(event) => foodDefaultImage(event)}
         className={style.image}
         top-width="100%"
-        src={image}
-        alt={name}
+        src={category?.strCategoryThumb}
+        alt={category?.strCategory}
       />
       <CardBody className="text-center">
         <CardTitle tag="h5" className={`text-primary ${style.title}`}>
-          {name}
+          {category?.strCategory}
         </CardTitle>
       </CardBody>
     </Card>

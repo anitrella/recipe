@@ -18,12 +18,7 @@ function CategoryGrid(props) {
         categories.map((cat, index) => {
           return (
             <NavLink to={`/${cat.strCategory}`}>
-              <CategoryCard
-                key={index}
-                name={cat.strCategory}
-                image={cat.strCategoryThumb}
-                idCategory={cat.idCategory}
-              />
+              <CategoryCard key={index} category={cat} />
             </NavLink>
           );
         })}

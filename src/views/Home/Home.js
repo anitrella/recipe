@@ -65,12 +65,11 @@ function Home(props) {
             </div>
           </Col>
           <Col sm>
-            <NavLink to={`/ricette/${randomApi.idMeal}`}>
+            <NavLink to={`/ricette/${randomApi?.idMeal}`}>
               <RicettaCard
                 className="text-center"
                 area={randomApi && randomApi.strArea}
-                name={randomApi && randomApi.strMeal}
-                image={randomApi && randomApi.strMealThumb}
+                meal={randomApi}
               />
             </NavLink>
           </Col>

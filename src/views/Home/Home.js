@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import style from "./Home.module.css";
 import { NavLink } from "react-router-dom";
 import { Container, Row, Col, Button } from "reactstrap";
-import RicettaCard from "../../components/RicettaCard/RicettaCard";
+import Card from "../../components/Card/Card";
 
 function Home(props) {
   const [randomApi, setRandomApi] = useState();
@@ -66,10 +66,12 @@ function Home(props) {
           </Col>
           <Col sm>
             <NavLink to={`/ricette/${randomApi?.idMeal}`}>
-              <RicettaCard
+              <Card
                 className="text-center"
-                area={randomApi && randomApi.strArea}
-                meal={randomApi}
+                subtitle={randomApi?.strArea}
+                img={randomApi?.strMealThumb}
+                title={randomApi?.strMeal}
+                variant="withBlackHeading"
               />
             </NavLink>
           </Col>

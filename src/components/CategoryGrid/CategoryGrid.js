@@ -1,6 +1,6 @@
 import React from "react";
-import CategoryCard from "../CategoryCard/CategoryCard";
 import { NavLink } from "react-router-dom";
+import Card from "../Card/Card";
 
 function CategoryGrid(props) {
   const { categories, col } = props;
@@ -18,7 +18,12 @@ function CategoryGrid(props) {
         categories.map((cat, index) => {
           return (
             <NavLink to={`/${cat.strCategory}`}>
-              <CategoryCard key={index} category={cat} />
+              <Card
+                key={index}
+                img={cat.strCategoryThumb}
+                title={cat.strCategory}
+                className="mb-4"
+              />
             </NavLink>
           );
         })}

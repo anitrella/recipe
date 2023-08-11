@@ -27,7 +27,7 @@ const Header = (props) => {
   });
 
   return (
-    <div>
+    <header>
       <Navbar fixed="top" light expand="md" className={style.navBar}>
         <RouterLink to="/">
           <img src={props.logo} className={style.logo} alt="logo" />
@@ -39,7 +39,7 @@ const Header = (props) => {
           </Nav>
         </Collapse>
       </Navbar>
-    </div>
+    </header>
   );
 };
 

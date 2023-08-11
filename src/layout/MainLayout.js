@@ -1,21 +1,21 @@
 import React from "react";
-import Footer from "../Footer/Footer";
-import Header from "../Header/Header";
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
 
-function MainTemplate(props) {
+function MainLayout(props) {
   const { footerCourseName, footerCourseLink, navItems, logo } = props;
 
   return (
-    <div>
+    <>
       <Header logo={logo} navItems={navItems} />
-      {props.children}
+      <main>{props.children}</main>
       <Footer
         courseName={footerCourseName}
         courseLink={footerCourseLink}
         navItems={navItems}
       />
-    </div>
+    </>
   );
 }
 
-export default MainTemplate;
+export default MainLayout;

@@ -1,8 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import style from "./Footer.module.css";
-import unimib from "../../assets/images/unimib.png";
-import disco from "../../assets/images/disco.png";
+import unimib from "assets/images/unimib.png";
+import disco from "assets/images/disco.png";
 
 function Footer(props) {
   const { courseName, courseLink, navItems } = props;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import MainTemplate from "./components/MainTemplate/MainTemplate";
+import MainLayout from "./layout/MainLayout";
 
 import Home from "./views/Home/Home.js";
 import Categorie from "./views/Categorie/Categorie";
@@ -107,7 +107,7 @@ function App() {
 
   return (
     <BrowserRouter basename="worldwidefood">
-      <MainTemplate
+      <MainLayout
         footerCourseName="Tecnologie e Applicazioni dei Sistemi Distribuiti"
         footerCourseLink="https://elearning.unimib.it/course/view.php?id=31277"
         navItems={nav}
@@ -129,10 +129,15 @@ function App() {
 
           <Route path="/ricette/:number" element={<RicettaDettaglio />} />
           <Route path="/documentazione" element={<Documentazione />} />
+          <Route path="/temporary" element={<Temporary />} />
         </Routes>
-      </MainTemplate>
+      </MainLayout>
     </BrowserRouter>
   );
 }
 
 export default App;
+
+function Temporary() {
+  return <div>Ciao</div>;
+}

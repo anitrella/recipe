@@ -1,15 +1,4 @@
 import React, { useState, useEffect } from "react";
-import MainLayout from "./layout/MainLayout";
-
-import Home from "./views/Home/Home.js";
-import Categorie from "./views/Categorie/Categorie";
-import Documentazione from "./views/Documentazione/Documentazione";
-import RicettaDettaglio from "./views/RicettaDettaglio/RicettaDettaglio";
-import RicettePerCategoria from "./views/RicettePerCategoria/RicettePerCategoria";
-import RicetteTutte from "./views/RicetteTutte/RicetteTutte";
-
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Logo from "./assets/images/logo.png";
 
 function App() {
   const [allRecipe, setAllRecipe] = useState([]);
@@ -98,46 +87,7 @@ function App() {
     if (details) setAllRecipeComplete([...allRecipeComplete, { ...details }]);
   }, [details]);
 
-  const nav = [
-    { url: "/", text: "Home" },
-    { url: "/categorie", text: "Categorie" },
-    { url: "/ricette", text: "Ricette" },
-    { url: "/documentazione", text: "Documentazione" },
-  ];
-
-  return (
-    <BrowserRouter basename="worldwidefood">
-      <MainLayout
-        footerCourseName="Tecnologie e Applicazioni dei Sistemi Distribuiti"
-        footerCourseLink="https://elearning.unimib.it/course/view.php?id=31277"
-        navItems={nav}
-        logo={Logo}
-      >
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/categorie" element={<Categorie />} />
-          <Route path="/:cat" element={<RicettePerCategoria />} />
-          <Route
-            path="/ricette"
-            element={
-              <RicetteTutte
-                allRecipe={allRecipe}
-                allRecipeComplete={allRecipeComplete}
-              />
-            }
-          />
-
-          <Route path="/ricette/:number" element={<RicettaDettaglio />} />
-          <Route path="/documentazione" element={<Documentazione />} />
-          <Route path="/temporary" element={<Temporary />} />
-        </Routes>
-      </MainLayout>
-    </BrowserRouter>
-  );
+  return <div>Ciao</div>;
 }
 
 export default App;
-
-function Temporary() {
-  return <div>Ciao</div>;
-}

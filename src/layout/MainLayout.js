@@ -1,18 +1,27 @@
 import React from "react";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
+import { Outlet } from "react-router-dom";
+import Logo from "assets/images/logo.png";
 
-function MainLayout(props) {
-  const { footerCourseName, footerCourseLink, navItems, logo } = props;
+const nav = [
+  { url: "/", text: "Home" },
+  { url: "/categorie", text: "Categorie" },
+  { url: "/ricette", text: "Ricette" },
+  { url: "/documentazione", text: "Documentazione" },
+];
 
+function MainLayout() {
   return (
     <>
-      <Header logo={logo} navItems={navItems} />
-      <main>{props.children}</main>
+      <Header logo={Logo} navItems={nav} />
+      <main>
+        <Outlet />
+      </main>
       <Footer
-        courseName={footerCourseName}
-        courseLink={footerCourseLink}
-        navItems={navItems}
+        courseName="Tecnologie e Applicazioni dei Sistemi Distribuiti"
+        courseLink="https://elearning.unimib.it/course/view.php?id=31277"
+        navItems={nav}
       />
     </>
   );

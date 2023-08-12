@@ -1,33 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Container, Col, Row } from "reactstrap";
 import style from "./RicettePerCategoria.module.css";
 import Table from "../../components/Table/Table";
 import { useParams } from "react-router-dom";
 import RicettaGrid from "../../components/RicettaGrid/RicettaGrid";
+import { useGetMealsByCategoryName } from "../../queries/useGetMealsByCategoryName";
 
 function RicettePerCategoria() {
-  const params = useParams();
-  const cat = params.cat;
-
+  const { cat } = useParams();
+  const { recipesList } = useGetMealsByCategoryName(cat);
   const [displayGrid, setDisplayGrid] = useState(true);
-  const [recipesList, setRecipesList] = useState();
-
-  // Chiamo l'Api per ottenere i dati dei pasti divisi per categoria
-  useEffect(() => {
-    let isMounted = true;
-    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${cat}`)
-      .then((r) => r.json())
-      .then((r) => {
-        if (isMounted) {
-          setRecipesList(r.meals);
-        }
-      })
-      .catch((e) => console.log("Error: " + e));
-
-    return () => {
-      isMounted = false;
-    };
-  }, []);
 
   return (
     <Container>

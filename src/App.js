@@ -1,31 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { useGetMealsCategoriesNames } from "queries/useGetMealsCategoriesNames";
 
 function App() {
   const [allRecipe, setAllRecipe] = useState([]);
-  const [listOfCategories, setListOfCategories] = useState();
   const [meals, setMeals] = useState([]);
   const [allMealsId, setAllMealsId] = useState([]);
   const [details, setDetails] = useState();
   const [allRecipeComplete, setAllRecipeComplete] = useState([]);
 
   //Passo 1: In questa useEffect chiamo l'api per avere la lista dei nomi di tutte le categorie
-  useEffect(() => {
-    let isMounted = true;
-
-    fetch(`https://www.themealdb.com/api/json/v1/1/categories.php
-    `)
-      .then((r) => r.json())
-      .then((r) => {
-        if (isMounted) {
-          const catNames = r.categories.map((category) => category.strCategory);
-          setListOfCategories(catNames);
-        }
-      })
-      .catch((error) => console.log("Error" + error));
-    return () => {
-      isMounted = false;
-    };
-  }, []);
+  const { listOfCategories } = useGetMealsCategoriesNames();
 
   //Passo 2: In questa useEffect faccio una chiamata API per avere i meals per ogni categorie
   useEffect(() => {

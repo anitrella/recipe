@@ -5,13 +5,13 @@ import Categorie from "views/Categorie/Categorie";
 import Documentazione from "views/Documentazione/Documentazione";
 import RicettaDettaglio from "views/RicettaDettaglio/RicettaDettaglio";
 import RicettePerCategoria from "views/RicettePerCategoria/RicettePerCategoria";
-import MainLayout from "layout/MainLayout";
+import App from "App";
 // import RicetteTutte from "views/RicetteTutte/RicetteTutte";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout />,
+    element: <App />,
     children: [
       {
         path: "",

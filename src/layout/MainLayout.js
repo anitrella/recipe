@@ -1,7 +1,6 @@
 import React from "react";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
-import { Outlet } from "react-router-dom";
 import Logo from "assets/images/logo.png";
 
 const nav = [
@@ -11,13 +10,11 @@ const nav = [
   { url: "/documentazione", text: "Documentazione" },
 ];
 
-function MainLayout() {
+function MainLayout(props) {
   return (
     <>
       <Header logo={Logo} navItems={nav} />
-      <main>
-        <Outlet />
-      </main>
+      <main>{props.children}</main>
       <Footer
         courseName="Tecnologie e Applicazioni dei Sistemi Distribuiti"
         courseLink="https://elearning.unimib.it/course/view.php?id=31277"

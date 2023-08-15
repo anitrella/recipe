@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useGetMealsCategoriesNames } from "queries/useGetMealsCategoriesNames";
+import MainLayout from "layout/MainLayout";
+import { Outlet } from "react-router-dom";
 
 function App() {
   const [allRecipe, setAllRecipe] = useState([]);
@@ -71,7 +73,11 @@ function App() {
     if (details) setAllRecipeComplete([...allRecipeComplete, { ...details }]);
   }, [details]);
 
-  return <div>Ciao</div>;
+  return (
+    <MainLayout>
+      <Outlet />
+    </MainLayout>
+  );
 }
 
 export default App;

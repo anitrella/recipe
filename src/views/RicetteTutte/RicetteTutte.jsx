@@ -14,13 +14,74 @@ import {
   Card,
 } from "reactstrap";
 import style from "./RicetteTutte.module.css";
+import { useGetMealsCategoriesNames } from "queries/useGetMealsCategoriesNames";
+import { getMealDetails, getMealsByCategoryName } from "services/meals";
 
-function RicetteTutte(props) {
-  const { allRecipe, allRecipeComplete } = props;
+function RicetteTutte() {
   const [allAreas, setAllAreas] = useState();
   const [activeFilter, setActiveFilter] = useState([]);
   const [recipeFiltered, setRecipeFiltered] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
+  const [allRecipe, setAllRecipe] = useState([]);
+  const [meals, setMeals] = useState([]);
+  const [allMealsId, setAllMealsId] = useState([]);
+  const [details, setDetails] = useState();
+  const [allRecipeComplete, setAllRecipeComplete] = useState([]);
+
+  //Passo 1: In questa useEffect chiamo l'api per avere la lista dei nomi di tutte le categorie
+  const { listOfCategories } = useGetMealsCategoriesNames();
+
+  //Passo 2: In questa useEffect faccio una chiamata API per avere i meals per ogni categorie
+  useEffect(() => {
+    let isMounted = true;
+
+    if (listOfCategories)
+      listOfCategories.forEach((category) => {
+        getMealsByCategoryName(category).then((meals) => {
+          if (isMounted) {
+            setMeals(meals);
+          }
+        });
+      });
+
+    return () => {
+      isMounted = false;
+    };
+  }, [listOfCategories]);
+
+  // Passo 3: man mano che ricevo i meals, li aggiungo a allRecipe
+  useEffect(() => {
+    setAllRecipe([...allRecipe, ...meals]);
+  }, [meals]);
+
+  // Passo 4: una volta ricevuti tutte le ricette, raccolgo tutti gli id in un array
+  useEffect(() => {
+    if (allRecipe.length === 283) {
+      setAllMealsId(allRecipe.map((recipe) => recipe.idMeal));
+    }
+  }, [allRecipe]);
+
+  // Passo 5: faccio la fetch di tutti i dettagli dei singoli meals
+  useEffect(() => {
+    let isMounted = true;
+
+    allMealsId.forEach((id) => {
+      getMealDetails(id).then((details) => {
+        if (isMounted) {
+          setDetails(details);
+        }
+      });
+    });
+
+    return () => {
+      isMounted = false;
+    };
+  }, [allMealsId]);
+
+  // Passo 6: man mano che arrivano i details viene costruito allRecipeComplete
+  useEffect(() => {
+    if (details) setAllRecipeComplete([...allRecipeComplete, { ...details }]);
+  }, [details]);
 
   // Imposto la funzione per cambiare il filtro per l'area geografica inserita
   const changeFilter = (item) => {

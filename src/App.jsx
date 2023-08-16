@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useGetMealsCategoriesNames } from "queries/useGetMealsCategoriesNames";
 import MainLayout from "layout/MainLayout";
 import { Outlet } from "react-router-dom";
+import { getMealDetails } from "./services/meals";
 
 function App() {
   const [allRecipe, setAllRecipe] = useState([]);
@@ -53,14 +54,11 @@ function App() {
     let isMounted = true;
 
     allMealsId.forEach((id) => {
-      fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
-        .then((r) => r.json())
-        .then((r) => {
-          if (isMounted) {
-            setDetails(r.meals[0]);
-          }
-        })
-        .catch((e) => console.log("Error: " + e));
+      getMealDetails(id).then((details) => {
+        if (isMounted) {
+          setDetails(details);
+        }
+      });
     });
 
     return () => {

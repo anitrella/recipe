@@ -11,3 +11,9 @@ export const getMealsByCategoryName = async (categoryName) => {
     r.json().then((r) => r.meals)
   );
 };
+
+export const getMealDetails = async (id) => {
+  return fetch(`${BASE_URL}/lookup.php?i=${id}`)
+    .then((r) => r.json())
+    .then((r) => r.meals[0]);
+};

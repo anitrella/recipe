@@ -1,6 +1,6 @@
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
-import Categorie from "views/Categorie/Categorie";
+import MealsCategories from "views/MealsCategories/MealsCategories";
 import Documentazione from "views/Documentazione/Documentazione";
 import RicettaDettaglio from "views/RicettaDettaglio/RicettaDettaglio";
 import RicettePerCategoria from "views/RicettePerCategoria/RicettePerCategoria";
@@ -19,7 +19,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "categorie",
-        element: <Categorie />,
+        element: <MealsCategories />,
       },
       {
         path: ":cat",
